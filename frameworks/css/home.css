@@ -1,0 +1,35 @@
+.carousel-item{
+	height: 100vh;
+	min-height: 350px;
+	background: no-repeat center center scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.carousel-caption p{
+	width: 100%;
+}
+
+.blockquote-class{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 12px 0;
+}
+
+.carouselItems-bannerwords{
+	position: relative;
+}
+
+.selection{
+	margin-bottom: 5%;
+}
+
+.main-img{
+	object-fit: scale-down;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}

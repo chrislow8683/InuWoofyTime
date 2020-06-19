@@ -1,0 +1,38 @@
+<div class="banner-upload">
+	<h1 class="display-4"><u>Upload</u></h1>
+</div>
+Photo by Marcus Löfvenberg on Unsplash
+
+<!-- https://learncodeweb.com/snippets/browse-button-in-bootstrap-4-with-select-image-preview/ -->
+<div class="container">
+	<div class="col-md-12 col-sm-12 text-center">
+		<!-- 
+		    Bootstrap 4 Alerts 
+		    <https://getbootstrap.com/docs/4.0/components/alerts/>
+		                                                            -->
+
+		<!-- Shows the message when an error occurs to the upload -->
+		<div ng-if="alertMsg != ''" class="alert alert-danger" role="alert">
+			{{alertMsg}}
+		</div>
+
+		<!-- Shows the message when the image is successfully uploaded -->
+		<div ng-if="successMsg != ''" class="alert alert-success" role="alert">
+		  	{{successMsg}}
+		</div>
+
+		<h1 class="lead">Upload your favourite Dog image to the Server!</h1>
+
+		<!-- Allow users to select the image file, only accepts image file extensions -->
+		<label for="file1">Your file:</label> 
+		<input class="file" type="file" id="file1" name="file" ng-files="getTheFiles($files)" accept="image/x-png,image/gif,image/jpeg" />
+
+		<!-- https://placeholder.com/ -->
+		<!-- Basically a preview of what the user selected -->
+		<div class="ml-2 col-sm-12">
+		  	<img alt="imageSelected" src="https://via.placeholder.com/500x400.png?text=Upload+Image+Now+To+Preview+Here" id="preview" class="img-thumbnail">
+		</div>
+
+		<button class="btn btn-dark upload-btn" ng-click="upload()">Upload</button>
+	</div>
+</div>

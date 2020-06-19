@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html data-ng-app="inuWoofyTime" lang="en">
+<head>
+    <title>InuWoofyTime!</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <link href="frameworks/css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="language" content="english" />
+    <meta name="keywords" content="InuWoofyTime, Inu, Dogs" />
+    <meta name="description" content="InuWoofyTime" />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="frameworks/css/main.css">
+    <link rel="stylesheet" type="text/css" href="frameworks/css/home.css">
+    <link rel="stylesheet" type="text/css" href="frameworks/css/breeds.css">
+    <link rel="stylesheet" type="text/css" href="frameworks/css/images.css">
+    <link rel="stylesheet" type="text/css" href="frameworks/css/upload.css">
+    <link rel="stylesheet" type="text/css" href="frameworks/css/disclaimer.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5
+    elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the
+    page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-ng-controller="myCtrl">
+    <!-- 
+        Bootstrap 4 NavBar 
+        <https://getbootstrap.com/docs/4.0/components/navbar/>
+                                                                -->
+    <div class="nav_banner" id="top">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-expand-md navbar-light col-md-12">
+            <a class="navbar-brand" href="#">InuWoofyTime</a>
+            <button onclick="onClick()" id="navBtn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#!">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!breeds">Breeds</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!images">Images</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!upload">Upload</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!disclaimer">Disclaimer</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Template views -->
+    <div data-ng-view class="col-md-12 col-sm-12" style="padding: 0px;"></div>
+
+    <footer class="page-footer bg-light">
+        <div class="text-center">
+                <h5>InuWoofyTime</h5>
+                <p>Dog is a man's best friend</p>
+            </div>
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="mailto:100088996@students.swinburne.com.my">Chris</a>
+        </div>
+    </footer>
+
+    <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
+    <script src="frameworks/js/jquery.min.js"></script>
+    <noscript>Your browser does not support JQuery!</noscript>
+    <!-- All Bootstrap plug-ins file -->
+    <script src="frameworks/js/bootstrap.min.js"></script>
+    <noscript>Your browser does not support Bootstrap!</noscript>
+    <!-- Basic AngularJS -->
+    <script src="frameworks/js/angular.min.js"></script>
+    <noscript>Your browser does not support AngularJS!</noscript>
+    <!-- AngularJS - Routing --> 
+    <script src="frameworks/js/angular-route.min.js"></script>
+    <noscript>Your browser does not support AngularJS!</noscript>
+    <!-- Controller -->
+    <script src="frameworks/js/inuwoofy.js"></script>
+    <noscript>Your browser does not support Javascript!</noscript>
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/335541e0f5.js" crossorigin="anonymous"></script>
+    <noscript>Your browser does not support FontAwesome!</noscript>
+    <!-- Javascript -->
+    <!-- To allow the background to have color when the user scrolls down or the btn clicked -->
+    <script>
+        var nav = document.getElementById("navbar");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100){
+                nav.style.background = "#f8f9fa";
+            } else {
+                nav.style.background = "none";
+            }
+        }
+
+        var navBtn = document.getElementById("navBtn");
+
+        function onClick() {
+            if(nav.style.background == "rgb(248, 249, 250)"){
+                nav.style.background = "none";
+            } else{
+                nav.style.background = "#f8f9fa";
+                console.log(nav.style.background);
+            }
+        }
+    </script>
+    <noscript>Your browser does not support Javascript!</noscript>
+
+</body>
+</html>

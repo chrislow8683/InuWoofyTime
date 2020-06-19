@@ -1,0 +1,33 @@
+.banner-images{
+	height: 50vh;
+	background-image: url(../../images/background5.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.banner-images h1{
+	margin-top: 100px;
+	color: white;
+}
+
+.breedImages{
+	width: 350px;
+	height: 350px;
+	background-size: cover;
+	object-fit: scale-down;
+	background-position: 50% 50%;
+    background-repeat: no-repeat;
+    margin: 4px 0;
+}
+
+.allImages{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}

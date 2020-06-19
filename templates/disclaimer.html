@@ -1,0 +1,50 @@
+<div class="banner-disclaimer">
+	<h1 class="display-4"><u>Disclaimer</u></h1>
+</div>
+Photo by Alexandre Debiève on Unsplash
+
+<div class="container">
+	<h1 class="lead text-center" style="margin-bottom: 30px">Important Notice!</h1>
+
+	<ul>
+		<li>This website is created mainly for educational and non-commercial use only. It is a partial fulfilment for completion of unit COS30043 – Interface Design & Development offered in Swinburne University of Technology, Sarawak Campus for Semester 2, 2020.</li> 
+
+		<li>The content or information of this website might be out-dated or inaccurate, thus, the web-developer and web-master does not take any responsibility for incorrect information disseminate or cited from this website.</li>
+
+		<li>If you believe that information of any kind on this website is an infringement of copyright in material in which you either own copyright or are authorized to exercise the rights of a copyright owner, kindly contact the web-developer, Low Lip Shen (kururu1999@hotmail.com) or web-master/ Lecturer, Mr. Khairul Azim (kazim@swinburne.edu.my) for removal.</li>
+	</ul>
+
+	<div class="feedback">
+		<h1 class="lead text-center" style="margin:50px 0 30px 0">Feedbacks</h1>
+		<p>Unhappy with the content available in this website? Send me an email here with the comments!</p>
+		<form method="post" action="validateForm.php" name="feedbackForm" class="col-md-12" novalidate>
+			<div class="form-row">
+			    <div class="col-md-6 mb-3">
+			      	<label for="fname">First name:</label>
+			      	<input id="fname" class="form-control" type="text" name="fname" ng-pattern="/^[a-zA-Z\s]*$/" ng-model="user.fname">
+			      	<span class="error" ng-show="feedbackForm.fname.$error.pattern">Letters only</span>
+			    </div>
+			    <div class="col-md-6 mb-3">
+			      	<label for="lname">Last name:</label>
+			      	<input id="lname" class="form-control" type="text" name="lname" ng-pattern="/^[a-zA-Z\s]*$/" ng-model="user.lname">
+			      	<span class="error" ng-show="feedbackForm.lname.$error.pattern">Letters only</span>
+			    </div>
+			</div>
+		  	<div class="form-group">
+		    	<label for="email">*Email address:</label>
+		    	<input id="email" class="form-control" type="email" name="email" ng-model="user.email" required>
+                <span class="error" ng-show="feedbackForm.email.$dirty && feedbackForm.email.$error.required">Please enter your email</span>
+                <span class="error" ng-show="feedbackForm.email.$error.email">Please insert a valid email</span>
+		  	</div>
+		  	<div class="form-group">
+    			<label for="feedbacks">*Feedback:</label>
+    			<textarea name="feedbacks" ng-model="user.feedbacks" class="form-control" id="feedbacks" rows="5" placeholder="Enter your feedbacks" required></textarea>
+    			<span class="error" ng-show="feedbackForm.feedbacks.$dirty && feedbackForm.feedbacks.$error.required">Please enter your feedbacks</span>
+  			</div>
+  			<p class="note">Note: * Compulsory to fill in</p>
+  			<div class="feedbackBtn">
+		  		<button type="submit" class="btn btn-dark feedbackBtn" ng-disabled="feedbackForm.$invalid">Submit</button>
+			</div>
+		</form>
+	</div>
+</div>

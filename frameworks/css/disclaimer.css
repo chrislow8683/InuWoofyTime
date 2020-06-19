@@ -1,0 +1,37 @@
+.banner-disclaimer{
+	height: 50vh;
+	background-image: url(../../images/background8.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.banner-disclaimer h1{
+	margin-top: 100px;
+	color: white;
+}
+
+.feedback form{
+	padding: 20px;
+	background-color: #dae0e5;
+	border-radius: 0.25em;
+}
+
+.feedbackBtn{
+	text-align: center;
+}
+
+.feedback form span{
+	font-style: italic;
+}
+
+.note{
+	text-align: right;
+	font-style: italic;
+	margin: 0;
+	font-size: 15px;
+}

@@ -1,0 +1,30 @@
+<div class="banner-images">
+	<h1 class="display-4"><u>Images</u></h1>
+</div>
+Photo by Ayla Verschueren on Unsplash
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 col-sm-12 selection">
+			<h2 style="font-size: 1.75rem">Choose your breed here</h2>
+			<div class="form-group">
+				<!-- Populates the dropdown list and allow users to select one of the breed names from the list -->
+				<!-- This will trigger the getBreedImg function when an option is selected -->
+			  	<label for="selectedBreed">Select list:</label>
+			  	<select ng-options="breed.name for breed in listBreeds" data-ng-model="selectedBreed2" class="form-control" id="selectedBreed" ng-change="getBreedImgs()">
+			  		<option>--</option>
+			  	</select>
+			</div>
+		</div>
+		<!-- Shows 6 images of the selected breed that the API can give, limited to 6 images -->
+		<!-- 
+		    Bootstrap 4 Card 
+		    <https://getbootstrap.com/docs/4.0/components/card/>
+		                                                            -->
+		<div class="col-md-12 col-sm-12 allImages" ng-if="selectedBreed2.id">
+			<h3 class="col-md-12 text-center">{{selectedBreed2.name}} Images</h3>
+			<div class="card breedImages" ng-repeat="img in breedImgs" style="background-image: url({{img.url}});" alt="{{img.breeds[0].name}}">
+			</div>
+		</div>
+	</div>
+</div>

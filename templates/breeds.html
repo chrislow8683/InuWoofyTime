@@ -1,0 +1,73 @@
+<div class="banner-breeds">
+	<h1 class="display-4"><u>Breeds</u></h1>
+</div>
+Photo by Pauline Loroy on Unsplash
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 col-sm-12 selection">
+			<h2 style="font-size: 1.75rem">Choose your breed here</h2>
+			<div class="form-group">
+				<!-- Populates the dropdown list and allow users to select one of the breed names from the list -->
+				<!-- This will trigger the getBreedImg function when an option is selected -->
+			  	<label for="selectedBreed">Select list:</label>
+			  	<select ng-options="breed.name for breed in listBreeds" data-ng-model="selectedBreed" class="form-control" id="selectedBreed" ng-change="getBreedImg()">
+			  		<option>--</option>
+			  	</select>
+			</div>
+		</div>
+		<!-- Shows the image of the breed -->
+		<div class="col-md-6 col-sm-12 my-auto breedImg" ng-if="selectedBreed.id">
+			<img ng-src="{{breedInfo[0].url}}" alt="breedsImage">
+		</div>
+		<!-- Shows the information of the breed -->
+		<div class="col-md-6 col-sm-12 my-auto" ng-if="selectedBreed.id">
+			<h3>{{selectedBreed.name}}'s Information:</h3>
+			<!-- 
+			    Bootstrap 4 Table
+			    <https://getbootstrap.com/docs/4.4/content/tables/>
+			                                                            -->
+			<table id="table" class="table table-sm table-bordered">
+			    <tbody>
+			    	<caption>Breed's Table</caption>
+			      	<tr ng-if="selectedBreed.name">
+				        <th class="table-primary">Name</th>
+				        <td>{{selectedBreed.name}}</td>
+			      	</tr>
+			      	<tr ng-if="selectedBreed.weight">
+			        	<th class="table-primary">Weight</th>
+			        	<td>Imperial: {{selectedBreed.weight.imperial}}</br>
+			        		Metric: {{selectedBreed.weight.metric}}
+			        	</td>
+			      	</tr>
+			      	<tr ng-if="selectedBreed.height">
+			        	<th class="table-primary">Height</th>
+			        	<td>Imperial: {{selectedBreed.height.imperial}}</br>
+			        		Metric: {{selectedBreed.height.metric}}
+			        	</td>
+			      	</tr>
+			      	<tr ng-if="selectedBreed.bred_for">
+			        	<th class="table-primary">Bred for</th>
+			        	<td>{{selectedBreed.bred_for}}</td>
+			      	</tr>
+			      	<tr ng-if="selectedBreed.breed_group">
+			        	<th class="table-primary">Breed Group</th>
+			        	<td>{{selectedBreed.breed_group}}</td>
+			      	</tr>
+			     	<tr ng-if="selectedBreed.life_span">
+			        	<th class="table-primary">Life Span</th>
+			        	<td>{{selectedBreed.life_span}}</td>
+			      	</tr>
+			      	<tr ng-if="selectedBreed.temperament">
+			        	<th class="table-primary">Temperament</th>
+			        	<td>{{selectedBreed.temperament}}</td>
+			      	</tr>
+			      	<tr ng-if="selectedBreed.origin">
+			        	<th class="table-primary">Origin</th>
+			        	<td>{{selectedBreed.origin}}</td>
+			      	</tr>
+			    </tbody>
+			</table>
+		</div>
+	</div>
+</div>
